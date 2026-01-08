@@ -116,6 +116,61 @@ footer {
   bottom: 20px;
   right: 20px;
 }
+
+.itens {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.item {
+  background: #000;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,.1);
+}
+
+.item img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.item button {
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%;
+  background: #d46e10;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.item button:hover {
+  background: #a93226;
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #d46e10;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s;
+}
+
+.toast.show {
+  opacity: 1;
+}
+
+
 /* ================= RESPONSIVIDADE ================= */
 
 @media (max-width: 1024px) {
