@@ -95,25 +95,25 @@ footer {
 .btn-wpp {
   position: fixed;
   bottom: 10px;
-  right: 20px;
+  right: 0px;
 }
 
 .btn-insta {
   position: fixed;
   bottom: 80px;
-  right: 30px;
+  right: 10px;
 }
 
 .btn-carrinho {
   position: fixed;
   top: 30px;
-  right: 30px;
+  right: 10px;
 }
 
 .btn-voltar {
   position: fixed;
   top: 30px;
-  left: 30px;
+  left: 20px;
 }
 
 .itens {
@@ -214,10 +214,12 @@ footer {
   header {
     min-height: 100vh;
     background-size: contain;
+    background-position: center;
   }
 
+
   section {
-    padding: 40px 6%;
+    padding: 40px 7%;
   }
 
   h2 {
@@ -242,5 +244,29 @@ footer {
 
   .itens {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-wpp img {
+    position: fixed;
+    bottom: 5px;
+    right: 0px;
+    width: 46px;
+  }
+
+  .btn-insta img {
+    position: fixed;
+    bottom: 40px;
+    right: 4px;
+    width: 36px;
+  }
+
+  .btn-carrinho img {
+    width: 36px;
+  }
+
+  .btn-voltar img {
+    width: 42px;
   }
 }
