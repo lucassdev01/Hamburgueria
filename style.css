@@ -233,19 +233,6 @@ footer {
   }
 }
 
-@media (max-width: 480px) {
-  header {
-    min-height: 31vh;
-  }
-
-  h2 {
-    font-size: 1.6rem;
-  }
-
-  .itens {
-    grid-template-columns: 1fr;
-  }
-}
 
 @media (max-width: 480px) {
   .btn-wpp img {
