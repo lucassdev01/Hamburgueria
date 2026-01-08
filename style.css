@@ -100,6 +100,11 @@ footer {
   cursor: pointer;
 }
 
+.btn-wpp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
 /* ================= RESPONSIVIDADE ================= */
 
 @media (max-width: 1024px) {
