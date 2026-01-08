@@ -233,6 +233,19 @@ footer {
   }
 }
 
+@media (max-width: 480px) {
+  header {
+    min-height: 30vh;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  .itens {
+    grid-template-columns: 1fr;
+  }
+}
 
 @media (max-width: 480px) {
   .btn-wpp img {
@@ -254,6 +267,6 @@ footer {
   }
 
   .btn-voltar img {
-    width: 42px;
+    width: 36px;
   }
 }
