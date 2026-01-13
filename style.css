@@ -1,3 +1,5 @@
+/* ================= RESET / BASE ================= */
+
 * {
   margin: 0;
   padding: 0;
@@ -11,19 +13,24 @@ body {
   line-height: 1.6;
 }
 
+/* ================= HEADER ================= */
+
 header {
   background: url("img/santachapa.png") center/cover no-repeat;
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
+
+/* ================= SEÇÕES ================= */
 
 section {
   padding: 60px 10%;
 }
 
-.sobre, .cardapio,.endereco, .pgto, .carrinho {
+.sobre,
+.cardapio,
+.endereco,
+.pgto,
+.carrinho {
   background: #1a1a1a;
   margin-bottom: 20px;
   border-radius: 8px;
@@ -36,85 +43,7 @@ h2 {
   font-size: 2.5rem;
 }
 
-.itens {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.item {
-  background: #222;
-  padding: 20px;
-  border-radius: 8px;
-}
-
-.item h3 {
-  margin-bottom: 10px;
-}
-
-.item span {
-  display: block;
-  margin-top: 10px;
-  color: #f5b301;
-  font-size: 1.2rem;
-}
-.mapa-container {
-  position: relative;
-  width: 100%;
-  padding-top: 30.25%;
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.mapa-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-footer {
-  background: #000;
-  text-align: center;
-  padding: 20px;
-  color: #aaa;
-}
-
-
-
-.close {
-  margin-top: 20px;
-  background: #f5b301;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-.btn-wpp {
-  position: fixed;
-  bottom: 10px;
-  right: 0px;
-}
-
-.btn-insta {
-  position: fixed;
-  bottom: 80px;
-  right: 10px;
-}
-
-.btn-carrinho {
-  position: fixed;
-  top: 30px;
-  right: 10px;
-}
-
-.btn-voltar {
-  position: fixed;
-  top: 30px;
-  left: 20px;
-}
+/* ================= CARDÁPIO ================= */
 
 .itens {
   display: grid;
@@ -136,6 +65,17 @@ footer {
   margin-bottom: 10px;
 }
 
+.item h3 {
+  margin-bottom: 10px;
+}
+
+.item span {
+  display: block;
+  margin-top: 10px;
+  color: #f5b301;
+  font-size: 1.2rem;
+}
+
 .item button {
   margin-top: 10px;
   padding: 10px;
@@ -151,23 +91,25 @@ footer {
   background: #a93226;
 }
 
-/* Toast */
-.toast {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background: #d46e10;
-  color: #fff;
-  padding: 12px 20px;
-  border-radius: 8px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .3s;
+/* ================= MAPA ================= */
+
+.mapa-container {
+  position: relative;
+  width: 100%;
+  padding-top: 30.25%;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
-.toast.show {
-  opacity: 1;
+.mapa-container iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
+
+/* ================= CARRINHO ================= */
 
 .item-carrinho {
   display: flex;
@@ -185,15 +127,56 @@ footer {
   border-radius: 8px;
 }
 
-.item-carrinho button {
+.info {
+  flex: 1;
+  text-align: left;
+}
+
+.controle-qtd {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   margin-left: auto;
-  background: #c0392b;
+}
+
+.controle-qtd button {
+  width: 32px;
+  height: 32px;
+  font-size: 18px;
+  background: #d46e10;
   color: #fff;
   border: none;
-  padding: 8px 12px;
   border-radius: 6px;
   cursor: pointer;
 }
+
+.controle-qtd button:active {
+  transform: scale(0.9);
+}
+
+.btn-editar {
+  margin-top: 6px;
+  background: transparent;
+  color: #f5b301;
+  border: 1px solid #f5b301;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.btn-editar:hover {
+  background: #f5b301;
+  color: #000;
+}
+
+.acoes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
 
 .total {
   margin-top: 20px;
@@ -201,6 +184,99 @@ footer {
   text-align: right;
 }
 
+.finalizar {
+  margin-top: 40px;
+}
+
+.finalizar h3 {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.finalizar-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.finalizar-form input,
+.finalizar-form select {
+  width: 320px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+.troco {
+  display: none;
+}
+
+.btn-finalizar {
+  margin-top: 12px;
+  background: #25d366;
+  color: #000;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+/* ================= TOAST ================= */
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #d46e10;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s;
+}
+
+.toast.show {
+  opacity: 1;
+}
+
+/* ================= BOTÕES FIXOS ================= */
+
+.btn-wpp {
+  position: fixed;
+  bottom: 10px;
+  right: 0;
+}
+
+.btn-insta {
+  position: fixed;
+  bottom: 80px;
+  right: 10px;
+}
+
+.btn-carrinho {
+  position: fixed;
+  top: 30px;
+  right: 10px;
+}
+
+.btn-voltar {
+  position: fixed;
+  top: 30px;
+  left: 20px;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+  background: #000;
+  text-align: center;
+  padding: 20px;
+  color: #aaa;
+}
 
 /* ================= RESPONSIVIDADE ================= */
 
@@ -211,25 +287,16 @@ footer {
 }
 
 @media (max-width: 768px) {
-  header {
-    min-height: 100vh;
-    background-size: contain;
-    background-position: center;
-  }
-
-
   section {
     padding: 40px 7%;
   }
 
+  header {
+    background-size: contain;
+  }
+
   h2 {
     font-size: 1.9rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .mapa-container {
-    padding-top: 100%; /* 1:1 */
   }
 }
 
@@ -245,27 +312,17 @@ footer {
   .itens {
     grid-template-columns: 1fr;
   }
-}
 
-@media (max-width: 480px) {
+  .mapa-container {
+    padding-top: 100%;
+  }
+
   .btn-wpp img {
-    position: fixed;
-    bottom: 5px;
-    right: 0px;
     width: 46px;
   }
 
-  .btn-insta img {
-    position: fixed;
-    bottom: 40px;
-    right: 4px;
-    width: 36px;
-  }
-
-  .btn-carrinho img {
-    width: 36px;
-  }
-
+  .btn-insta img,
+  .btn-carrinho img,
   .btn-voltar img {
     width: 36px;
   }

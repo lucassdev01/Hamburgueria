@@ -17,6 +17,60 @@
   </div>
   </section>
 
+<div class="finalizar">
+  <h3>Finalizar Pedido</h3>
+
+  <div class="finalizar-form">
+    <input
+  type="text"
+  id="cep"
+  placeholder="CEP (somente números)"
+  maxlength="8"
+  onblur="buscarCEP()"
+/>
+
+<input
+  type="text"
+  id="endereco"
+  placeholder="Endereço"
+  readonly
+/>
+
+<input
+  type="text"
+  id="numero"
+  placeholder="Número"
+/>
+
+<input
+  type="text"
+  id="complemento"
+  placeholder="Complemento (opcional)"
+/>
+
+
+    <select id="pagamento" onchange="toggleTroco()">
+      <option value="">Forma de pagamento</option>
+      <option value="Dinheiro">Dinheiro</option>
+      <option value="Pix">Pix</option>
+      <option value="Cartão de Crédito">Cartão de Crédito</option>
+      <option value="Cartão de Débito">Cartão de Débito</option>
+    </select>
+
+    <input
+      type="text"
+      id="troco"
+      placeholder="Troco para quanto?"
+      class="troco"
+    />
+
+    <button class="btn-finalizar" onclick="finalizarPedido()">
+      Enviar pedido no WhatsApp
+    </button>
+  </div>
+</div>
+
+
    
 
 

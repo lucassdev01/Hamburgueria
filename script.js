@@ -15,7 +15,7 @@ function adicionarCarrinho(nome, preco) {
   if (item) {
     item.qtd++;
   } else {
-    carrinho.push({ nome, preco, qtd: 1 });
+   carrinho.push({ nome, preco, qtd: 1, obs: "" });
   }
 
   localStorage.setItem("carrinho", JSON.stringify(carrinho));
