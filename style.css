@@ -43,6 +43,10 @@ h2 {
   font-size: 2.5rem;
 }
 
+.social-mobile {
+  display: none;
+}
+
 /* ================= CARDÁPIO ================= */
 
 .itens {
@@ -245,14 +249,17 @@ h2 {
 
 /* ================= BOTÕES FIXOS ================= */
 
-.btn-wpp {
+.btn-fixo {
   position: fixed;
-  bottom: 10px;
-  right: 0;
+  z-index: 998;
 }
 
-.btn-insta {
-  position: fixed;
+.btn-fixo.btn-wpp {
+  bottom: 10px;
+  right: 10px;
+}
+
+.btn-fixo.btn-insta {
   bottom: 80px;
   right: 10px;
 }
@@ -289,15 +296,18 @@ footer {
 @media (max-width: 768px) {
   section {
     padding: 40px 7%;
+    
   }
 
 
   .hero {
 
+    background-image: url(img/santachapamobile.jpeg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     min-height: 30svh;
+    background-color: #000;
   }
 
   h2 {
@@ -322,13 +332,47 @@ footer {
     padding-top: 100%;
   }
 
-  .btn-wpp img {
-    width: 46px;
-  }
-
-  .btn-insta img,
   .btn-carrinho img,
   .btn-voltar img {
     width: 36px;
   }
+
+  .btn-fixo {
+    display: none;
+  }
+
+
+  .social-mobile {
+    display: flex;
+    justify-content: center;
+    padding: 24px 0 40px;
+    background: linear-gradient(to top, #000, transparent);
+  }
+
+  .social-box {
+    display: flex;
+    gap: 24px;
+    background: #111;
+    padding: 14px 24px;
+    border-radius: 999px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.6);
+  }
+
+ .social-box img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+  .social-box a {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .social-box .icon-wpp img {
+  transform: scale(0.88);
+}
 }
