@@ -15,8 +15,8 @@ body {
 
 /* ================= HEADER ================= */
 
-header {
-  background: url("img/santachapa.png") center/cover no-repeat;
+.hero {
+  background: url("img/santachapa.png") center / cover no-repeat;
   min-height: 100vh;
 }
 
@@ -291,8 +291,13 @@ footer {
     padding: 40px 7%;
   }
 
-  header {
+
+  .hero {
+
     background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 30svh;
   }
 
   h2 {
