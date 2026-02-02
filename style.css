@@ -241,11 +241,14 @@ h2 {
   opacity: 0;
   pointer-events: none;
   transition: opacity .3s;
+
+  z-index: 9999;
 }
 
 .toast.show {
   opacity: 1;
 }
+
 
 /* ================= BOTÕES FIXOS ================= */
 
