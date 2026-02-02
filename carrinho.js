@@ -49,12 +49,31 @@ function editarItem(index) {
     atual
   );
 
-  if (novaObs !== null) {
-    carrinho[index].obs = novaObs.trim();
-    localStorage.setItem("carrinho", JSON.stringify(carrinho));
-    renderCarrinho();
+  if (novaObs === null) return;
+
+  const item = carrinho[index];
+  const obsNova = novaObs.trim();
+
+  // se só existe 1 unidade, pode editar direto
+  if (item.qtd === 1) {
+    item.obs = obsNova;
+  } else {
+    // se tem mais de uma unidade, separa 1 unidade
+    item.qtd -= 1;
+
+    const novoItem = {
+      ...item,
+      qtd: 1,
+      obs: obsNova
+    };
+
+    carrinho.splice(index + 1, 0, novoItem);
   }
+
+  localStorage.setItem("carrinho", JSON.stringify(carrinho));
+  renderCarrinho();
 }
+
 
 function renderCarrinho() {
   lista.innerHTML = "";

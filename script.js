@@ -10,18 +10,30 @@ function fecharModal() {
 function adicionarCarrinho(nome, preco) {
   let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
 
-  const item = carrinho.find(p => p.nome === nome);
+  const produtoNovo = {
+    nome,
+    preco,
+    qtd: 1,
+    obs: ""
+  };
+
+  const item = carrinho.find(p =>
+    p.nome === produtoNovo.nome &&
+    p.preco === produtoNovo.preco &&
+    (p.obs || "").trim() === ""
+  );
 
   if (item) {
     item.qtd++;
   } else {
-   carrinho.push({ nome, preco, qtd: 1, obs: "" });
+    carrinho.push(produtoNovo);
   }
 
   localStorage.setItem("carrinho", JSON.stringify(carrinho));
 
   mostrarMensagem();
 }
+
 
 function mostrarMensagem() {
   const toast = document.getElementById("toast");
